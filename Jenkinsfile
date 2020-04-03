@@ -8,15 +8,21 @@ pipeline {
          }
       }
 	  
-stage ('build') {
-  echo 'Build stage'
-}
-stage ('test: integration-&-quality') {
-  echo 'quality stage'
-}
+	stage ('build') {
+	  steps {
+	    echo 'Build stage'
+	  }
+	}
+	stage ('test: integration-&-quality') {
+	   steps {
+	     echo 'quality stage'
+	  }
+	}
 
-stage ('deploy:prod') {
-  echo 'Deploy stage'
-}
-   }
+	stage ('deploy') {
+	  steps {
+	     echo 'quality stage'
+	    }
+	  }
+    }
 }
